@@ -1,0 +1,29 @@
+<h1>Listing logos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Url</th>
+      <th>User group</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @logos.each do |logo| %>
+      <tr>
+        <td><%= logo.url %></td>
+        <td><%= logo.user_group_id %></td>
+        <td><%= link_to 'Show', logo %></td>
+        <td><%= link_to 'Edit', edit_logo_path(logo) %></td>
+        <td><%= link_to 'Destroy', logo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Logo', new_logo_path %>

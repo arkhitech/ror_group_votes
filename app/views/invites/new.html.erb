@@ -1,0 +1,22 @@
+<h1>New invite</h1>
+
+<%= link_to 'Back', invites_path %>
+
+<%= form_for @invite , :url => invites_path do |f| %>
+  <% if @invite.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@invite.errors.count, "error") %> prohibited this invite from being saved:</h2>
+
+      <ul>
+      <% @invite.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <%#= f.hidden_field :user_group_id, :value => @invite.user_group_id %>
+    <%= f.label :email %>
+    <%= f.email_field :email %>
+    <%= f.submit 'Send' %>
+<% end %>

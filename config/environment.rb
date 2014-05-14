@@ -3,3 +3,4 @@ require File.expand_path('../application', __FILE__)
 
 # Initialize the Rails application.
 GroupVoting::Application.initialize!
+Rails.configuration.gem "cancan"

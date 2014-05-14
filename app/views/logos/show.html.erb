@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @logo.url %>
+</p>
+
+<p>
+  <strong>User group:</strong>
+  <%= @logo.user_group_id %>
+</p>
+
+<%= link_to 'Edit', edit_logo_path(@logo) %> |
+<%= link_to 'Back', logos_path %>

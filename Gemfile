@@ -3,6 +3,9 @@ source 'https://rubygems.org'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.4'
 gem 'devise'
+gem "cancan"
+gem 'acts_as_votable', '~> 0.9.0'
+
 # Use sqlite3 as the database for Active Record
 group :development, :test ,:production do
   gem 'mysql2'

@@ -1,14 +1,23 @@
 GroupVoting::Application.routes.draw do
   
+  resources :logos
+
+  resources :invites
+
+  resources :memberships
+
+  resources :user_groups
+
   authenticated :user do
     get 'welcome#index'=> 'welcome#index'
   end
   
   root :to => 'welcome#index'
-  devise_for :users
+  devise_for :users, :controllers => {:registrations => "registrations"}
   
   resources  :users
   devise_for :models
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
  
